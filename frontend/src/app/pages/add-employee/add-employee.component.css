@@ -1,0 +1,95 @@
+.add-employee-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-employee-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+input[type='file'] {
+  font-family: inherit;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+img {
+  display: block;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  object-fit: cover;
+}
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+img {
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}

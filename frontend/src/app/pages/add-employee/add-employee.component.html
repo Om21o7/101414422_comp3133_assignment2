@@ -1,0 +1,40 @@
+<div class="add-employee-container">
+  <h2>Add New Employee</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter employee's name"/>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Enter employee's email"/>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department" placeholder="Enter department"/>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Position</mat-label>
+      <input matInput formControlName="position" placeholder="Enter position"/>
+    </mat-form-field>
+
+    <div class="form-field">
+      <label>Profile Picture:</label>
+      <input type="file" (change)="onFileSelected($event)" />
+      <div *ngIf="imagePreview" style="margin-top: 10px;">
+        <p>Image Preview:</p>
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" width="100" height="100" style="margin-top:10px; border:1px solid #ccc;" />
+      </div>      
+    </div>
+  
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">
+      Add Employee
+    </button>
+
+  </form>
+</div>

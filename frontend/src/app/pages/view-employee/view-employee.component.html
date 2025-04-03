@@ -1,0 +1,14 @@
+<div class="view-employee-container" *ngIf="employee">
+  <h2>Employee Details</h2>
+
+  <div class="profile-picture" *ngIf="employee.profilePic">
+    <img [src]="employee.profilePic" alt="Profile Picture" />
+  </div>
+
+  <p><strong>Name:</strong> {{ employee.name }}</p>
+  <p><strong>Email:</strong> {{ employee.email }}</p>
+  <p><strong>Department:</strong> {{ employee.department }}</p>
+  <p><strong>Position:</strong> {{ employee.position }}</p>
+
+  <button mat-raised-button color="accent" (click)="goBack()">Back</button>
+</div>

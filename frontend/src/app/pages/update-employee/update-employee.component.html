@@ -1,0 +1,29 @@
+<div class="update-employee-container" *ngIf="employeeForm">
+    <h2>Update Employee</h2>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+  
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+  
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Department</mat-label>
+        <input matInput formControlName="department" />
+      </mat-form-field>
+  
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Position</mat-label>
+        <input matInput formControlName="position" />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">
+        Update
+      </button>
+    </form>
+  </div>
+  
