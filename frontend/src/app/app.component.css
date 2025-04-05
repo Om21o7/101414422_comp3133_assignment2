@@ -1,0 +1,17 @@
+.logout-button {
+    background: linear-gradient(to right, #ff6b6b, #d32f2f);
+    color: white;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .logout-button:hover {
+    background: linear-gradient(to right, #c0392b, #b71c1c);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  

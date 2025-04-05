@@ -8,11 +8,6 @@
       <mat-label>Search by Department</mat-label>
       <input matInput [(ngModel)]="searchDept" (input)="filterEmployees()" />
     </mat-form-field>
-
-    <mat-form-field appearance="outline" class="search-field">
-      <mat-label>Search by Position</mat-label>
-      <input matInput [(ngModel)]="searchPos" (input)="filterEmployees()" />
-    </mat-form-field>
   </div>
 
   <button mat-raised-button color="primary" (click)="navigateToAddEmployee()">

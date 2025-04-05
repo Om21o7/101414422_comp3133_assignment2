@@ -1,69 +1,97 @@
-/* Apply clean modern typography */
-* {
-  font-family: 'Inter', sans-serif;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 .login-container,
 .signup-container {
-  max-width: 440px;
-  margin: 60px auto;
-  padding: 36px 32px;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e4e4e7;
+  max-width: 460px;
+  margin: 100px auto;
+  padding: 48px 36px;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  font-family: 'Nunito', sans-serif;
+  animation: fadeInUp 0.6s ease-out;
+  transition: 0.3s ease-in-out;
 }
 
-h2 {
+.login-container:hover,
+.signup-container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.login-container h2,
+.signup-container h2 {
   text-align: center;
+  font-size: 34px;
   margin-bottom: 30px;
-  color: #1e293b;
-  font-weight: 600;
-  font-size: 24px;
-  letter-spacing: 0.3px;
+  color: #004d61;
+  font-weight: 700;
 }
 
 .form-field {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 
-mat-form-field {
-  width: 100%;
+.mat-form-field {
+  background: #f1faff;
+  border-radius: 10px;
 }
 
-button[type="submit"] {
+input.mat-input-element {
+  padding: 14px;
+  font-size: 16px;
+}
+
+button[mat-raised-button] {
   width: 100%;
-  height: 44px;
-  font-size: 15px;
-  font-weight: 600;
-  background-color: #1976d2; /* Material Blue */
-  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00838f, #00acc1);
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 131, 143, 0.3);
+  transition: background 0.2s ease;
 }
 
-button[type="submit"]:hover {
-  background-color: #1565c0;
+button[mat-raised-button]:hover:not(:disabled) {
+  background: linear-gradient(90deg, #006064, #00838f);
+}
+
+button[mat-raised-button]:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 a {
-  color: #1976d2;
+  color: #007c91;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: 600;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #005f6b;
 }
 
-.redirect-link {
+.login-container div:last-child,
+.signup-container div:last-child {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
-  color: #4b5563;
+  color: #333;
+}
+
+/* Subtle animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

@@ -1,27 +1,23 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  imports: [CommonModule, MatToolbarModule]
+  styleUrls: ['./header.component.css']
 })
-
 export class HeaderComponent {
   constructor(private router: Router) {}
 
   logout(): void {
-    const confirmLogout = window.confirm('Are you sure you want to log out?');
-    if (confirmLogout) {
-      localStorage.removeItem('token'); // Clear token or session data
-      window.location.href = '/login';  // Navigate to login (hard redirect)
+    if (confirm('Are you sure you want to log out?')) {
+      localStorage.removeItem('token');
       alert('You have been logged out.');
+      this.router.navigate(['/login']);
     }
   }
-  
 }

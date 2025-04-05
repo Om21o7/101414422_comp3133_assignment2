@@ -48,7 +48,7 @@ export class LoginComponent {
       this.authService.login(email, password).subscribe({
         next: (token) => {
           localStorage.setItem('authToken', token);
-          this.router.navigate(['/employees']); // 🔜 You’ll create this page later
+          this.router.navigate(['/employees']); 
         },
         error: (err) => {
           console.error('Login failed:', err);

@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
-// Setup multer
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadDir = path.join(__dirname, '..', 'uploads');
@@ -29,18 +29,18 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// ✅ Fix: Return full URL so Angular can load the image
+
 app.post('/upload', upload.single('profilePic'), (req, res) => {
   if (!req.file) return res.status(400).send('No file uploaded.');
 
   const protocol = req.protocol;
-  const host = req.get('host'); // e.g., localhost:4000
+  const host = req.get('host'); 
   const fileUrl = `${protocol}://${host}/uploads/${req.file.filename}`;
   
   res.json({ url: fileUrl });
 });
 
-// GraphQL server
+
 async function startServer() {
   const server = new ApolloServer({
     typeDefs,
@@ -56,11 +56,7 @@ async function startServer() {
   server.applyMiddleware({ app });
 
   await mongoose.connect(
-    'mongodb+srv://drastiparikh23:Dp%4023063@cluster0.a5txz.mongodb.net/COMP3133Assignment2?retryWrites=true&w=majority&appName=Cluster0',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
+    'mongodb+srv://ommakwana1825:RQEoabuSC9IndGiK@cluster0.ef2mn.mongodb.net/Assign02?retryWrites=true&w=majority&appName=Cluster0'
   );
 
   console.log('✅ Connected to MongoDB');

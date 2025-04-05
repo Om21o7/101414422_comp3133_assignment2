@@ -1,59 +1,112 @@
-# 101419828Comp3133Assignment2
+# 101414422Comp3133Assignment2
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.2.
+This project is built using **Angular** for the frontend and **Node.js** with **Express** for the backend. The project uses **Docker** for containerization, and **GraphQL** is used as the backend API.
 
-## Development server
+---
 
-To start a local development server, run:
+## Development Setup
 
-```bash
-ng serve
-```
+To get the project up and running, you need to set up both the **frontend** (Angular) and **backend** (Node.js) parts of the project.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+### 1. Frontend Setup (Angular)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Navigate to the frontend directory**:
 
-```bash
-ng generate component component-name
-```
+    cd frontend
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+2. **Install dependencies**:
 
-## Building
+    Install the required dependencies using npm:
 
-To build the project run:
+    npm install --legacy-peer-deps
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. **Run the development server**:
 
-## Running unit tests
+    To start the Angular development server, run:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+    ng serve
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+- This will launch the Angular application at `http://localhost:4200/`.
+- The application will automatically reload when changes are made to the source files.
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Backend Setup (Node.js + GraphQL)
+
+1. **Navigate to the backend directory**:
+
+    cd backend
+
+
+2. **Install dependencies**:
+
+    Install the required dependencies using npm:
+
+    npm install
+
+
+3. **Run the backend server**:
+
+    To start the backend server, run:
+
+    node src/index.js or   npm run start
+
+
+- This will start the server at `http://localhost:4000/graphql`.
+
+---
+
+### 3. Running Both Servers with Docker
+
+1. **Build and start the containers**:
+
+    Run the following command to build and start both frontend and backend containers:
+
+    docker-compose up --build
+
+2. **Access the application**:
+
+- Frontend will be available at `http://localhost:4200`.
+- Backend GraphQL API will be available at `http://localhost:4000/graphql`.
+
+---
+
+## Docker Setup
+
+For easier management of the application, Docker is used to run both the frontend and backend inside containers.
+
+### Backend Dockerfile
+
+The backend Dockerfile is set up to build and run the Node.js application in a container.
+
+### Frontend Dockerfile
+
+The frontend Dockerfile is set up to build and serve the Angular application with Nginx.
+
+### Docker Compose
+
+The `docker-compose.yml` file is used to run both the frontend and backend services together.
+
+To start both services using Docker, simply run:
+
+docker-compose up --build    
+
+This will set up the containers, and you can access:
+- Frontend at `http://localhost:4200`
+- Backend GraphQL API at `http://localhost:4000/graphql`
+
+---
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more information on using Angular CLI and Docker, visit these official resources:
+- [Angular CLI Overview and Command Reference](https://angular.io/cli)
+- [Docker Documentation](https://docs.docker.com/)
+
+---

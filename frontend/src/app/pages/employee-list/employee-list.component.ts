@@ -7,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-import { HeaderComponent } from '../../shared/header/header.component'; // adjust path if needed
+import { HeaderComponent } from '../../shared/header/header.component'; 
 
 
 
@@ -46,8 +46,7 @@ export class EmployeeListComponent implements OnInit {
 
   filterEmployees() {
     this.filteredEmployees = this.employees.filter(emp =>
-      emp.department.toLowerCase().includes(this.searchDept.toLowerCase()) &&
-      emp.position.toLowerCase().includes(this.searchPos.toLowerCase())
+      emp.department.toLowerCase().includes(this.searchDept.toLowerCase()) 
     );
   }
 
@@ -68,7 +67,7 @@ export class EmployeeListComponent implements OnInit {
     if (confirm('Are you sure you want to delete this employee?')) {
       this.employeeService.deleteEmployee(id).subscribe(() => {
         this.employees = this.employees.filter(emp => emp.id !== id);
-        this.filterEmployees(); // refresh filtered list too
+        this.filterEmployees();
       });
     }
   }

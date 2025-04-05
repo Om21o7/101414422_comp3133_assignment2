@@ -12,8 +12,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'employees', component: EmployeeListComponent },
-  { path: 'employee/:id', component: ViewEmployeeComponent },       // 🔜
-{ path: 'update-employee/:id', component: UpdateEmployeeComponent }, // 🔜
+  { path: 'employee/:id', component: ViewEmployeeComponent },       
+{ path: 'update-employee/:id', component: UpdateEmployeeComponent }, 
 { path: 'add-employee', component: AddEmployeeComponent },
 
 
